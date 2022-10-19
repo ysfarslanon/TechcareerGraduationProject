@@ -1,0 +1,64 @@
+<div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6 ">
+        <table class="table table-striped  text-center">
+          <thead>
+            <tr class="text-start">
+              
+                <th>
+                    <input
+                    [(ngModel)]="filterText"
+                    id="filterProductText"
+                    type="text"
+                    name="filter"
+                    class="form-control"
+                    placeholder="Ürün ismine göre ara"
+                  />
+                </th>
+                <th>
+                    <select class="form-select" name="categories" id="categorySelect" [(ngModel)]="selectedCategoryId" >
+                        <option value="0">Hepsi</option>
+                        <option [ngValue]="c.id" *ngFor="let c of categories" >{{c.name}}</option>
+                      </select>
+                </th>
+                <th>
+                    <button class="btn btn-success" [routerLink]="changeURL()">Filtrele</button>
+                </th>
+                <th>
+                    <button class="btn btn-success" routerLink="/shoppinglistdetail/{{selectedShoppingListId}}">Temizle</button>
+                </th>
+                <th>
+                  <button class="btn btn-success" routerLink="/shoppinglist">Listelerim</button>
+              </th>
+            </tr>
+            <tr class="table-info">
+              <th scope="col">Ad</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">Resim</th>
+              <th scope="col" colspan="2">Aksiyonlar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of products | productFilterText: filterText">
+              <td>{{ p.name }}</td>
+              <td>{{ p.categoryName }}</td>
+              <td><img [src]="p.pictureURL" class="rounded " [alt]="p.name" height="50" width="50"></td>
+              <td  colspan="2">
+                <button
+                  id="btnUpdate"
+                  class="btn btn-primary"
+                  routerLink="/shoppinglistdetail/{{ selectedShoppingListId }}/add/{{ p.id }}"
+                >
+                <i class="bi bi-plus-circle-fill"></i>
+                </button>
+              </td>
+             
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+  
+  

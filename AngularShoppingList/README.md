@@ -1,0 +1,13 @@
+# Frontend Angular
+- Angular
+    - Guard
+    - Interceptors
+    - JwtHelperService
+    - HttpClient
+    - Reactive Forms - Validators - Custom Validators
+    - Router
+    - Activated Route
+- Bootstrap 5.2
+- Bootstrap Icon
+- Toastr
+- LocalStorage

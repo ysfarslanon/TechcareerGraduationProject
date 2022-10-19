@@ -1,0 +1,45 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-6 ">
+      <table class="table table-striped  text-center">
+        <thead>
+          <tr class="text-start">
+            <th><button type="button" class="btn btn-success" routerLink="/category/add"><i class="bi bi-plus-circle-fill"></i></button></th>
+          </tr>
+          <tr class="table-info">
+            <th scope="col">#</th>
+            <th scope="col">Ad</th>
+            <th scope="col" colspan="2">Aksiyonlar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of categories">
+            <th scope="row">{{ c.id }}</th>
+            <td>{{ c.name }}</td>
+            <td>
+              <button
+                class="btn btn-primary"
+                routerLink="/category/update/{{ c.id }}"
+              >
+              <i class="bi bi-pencil-fill"></i>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#categoryDeleteModal"
+                (click)="delete(c.id)"
+              >
+              <i class="bi bi-trash-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+</div>
+

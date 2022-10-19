@@ -1,0 +1,41 @@
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="shoppingListDetailAddForm">
+    <img
+      class="mb-4 mx-auto d-block"
+      src="/assets/techcareer-logo.svg"
+      alt=""
+      width="144"
+      height="100"
+    />
+    <h1 class="h3 mb-3 fw-normal text-center">Ürünü listeye ekle</h1>
+
+    <div class="form-floating">
+      <p>{{ selectedProduct.name }}</p>
+    </div>
+    <div class="form-floating">
+      <input
+        type="textarea"
+        class="form-control"
+        id="floatingDescription"
+        placeholder="Açıklama"
+        formControlName="description"
+      />
+      <label for="floatingEmail">Açıklama</label>
+    </div>
+
+    <button
+      class="w-100 btn btn-lg btn-primary mt-3"
+      type="submit"
+      (click)="addShoppingListDetail()"
+      routerLink="/shoppinglistdetail/{{ selectedShoppingListId }}"
+    >
+      Ekle
+    </button>
+    <button
+      class="w-100 btn btn-lg btn-success mt-2"
+      routerLink="/shoppinglistdetail/{{ selectedShoppingListId }}"
+    >
+      Ürün listesi
+    </button>
+  </form>
+</main>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <button class="btn btn-dark" routerLink="/"><i class="bi bi-house-door-fill"></i></button>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    
+                    <p class="mt-2 me-3 fw-bold" *ngIf="isLogged">{{userFullName}}</p>
+                    <button class="btn btn-success btn-lg me-2" routerLink="/login" *ngIf="!isLogged">Giriş yap</button>
+                    <button class="btn btn-primary btn-lg" routerLink="/register" *ngIf="!isLogged">Kayıt ol</button>
+                    <button class="btn btn-danger btn-lg" routerLink="/" *ngIf="isLogged" (click)="logOut()" >Çıkış yap</button>
+                    
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </div>
+</div>

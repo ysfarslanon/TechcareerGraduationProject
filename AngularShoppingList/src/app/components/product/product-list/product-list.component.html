@@ -1,0 +1,76 @@
+<div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6 ">
+        <table class="table table-striped  text-center">
+          <thead>
+            <tr class="text-start">
+              <th>
+                <button type="button" class="btn btn-success" routerLink="/product/add"><i class="bi bi-plus-circle-fill"></i></button>
+              </th>
+                <th>
+                    <input
+                    [(ngModel)]="filterText"
+                    id="filterBrandText"
+                    type="text"
+                    name="filter"
+                    class="form-control"
+                    placeholder="İsme göre ara"
+                  />
+                </th>
+                <th>
+                    <select class="form-select" name="categories" id="categorySelect" [(ngModel)]="selectedCategoryId" >
+                        <option value="0">Hepsi</option>
+                        <option [ngValue]="c.id" *ngFor="let c of categories" >{{c.name}}</option>
+                      </select>
+                </th>
+                <th>
+                    <button class="btn btn-success" [routerLink]="changeURL()">Filtrele</button>
+                </th>
+                <th>
+                    <button class="btn btn-success" routerLink="/products">Temizle</button>
+                </th>
+            </tr>
+            <tr class="table-info">
+              <th scope="col">#</th>
+              <th scope="col">Ad</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">Resim</th>
+              <th scope="col" colspan="2">Aksiyonlar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of products | productFilterText: filterText">
+              <th scope="row">{{ p.id }}</th>
+              <td>{{ p.name }}</td>
+              <td>{{ p.categoryName }}</td>
+              <td><img [src]="p.pictureURL" class="rounded " [alt]="p.name" height="50" width="50"></td>
+              <td>
+                <button
+                  id="btnUpdate"
+                  class="btn btn-primary"
+                  routerLink="/product/update/{{ p.id }}"
+                >
+                <i class="bi bi-pencil-fill"></i>
+                </button>
+              </td>
+              <td>
+                <button
+                  id="btnDelete"
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#categoryDeleteModal"
+                  (click)="delete(p.id)"
+                >
+                <i class="bi bi-trash-fill"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+  
+  

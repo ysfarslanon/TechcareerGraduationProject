@@ -1,0 +1,80 @@
+<main class="container">
+    <section class="row">
+        <div class="col-md-8 offset-md-2 mt-3">
+            
+            <div class="card">
+                <div class="card-body m-auto">
+                    <img src="./assets/icon-add.png" alt="icon-add" routerLink="/shoppinglist/add">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 offset-md-2 mt-3" *ngFor="let shoppingList of userShoppingLists">
+
+            <div class="card   ">
+                <div class="card-header">
+                    <div class="p-2 mb-2">
+                        <h5>Liste: {{shoppingList.shoppingListName}}</h5>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-success me-1" routerLink="/shoppinglistdetail/{{shoppingList.shoppingListId}}" [disabled]="shoppingList.isShopping">Ürün ekle</button>    
+                        <button class="btn btn-primary me-1" [disabled]="shoppingList.isShopping" (click)="changeIsShoppingState(shoppingList.shoppingListId, true)">Alışverişe çık</button>    
+                        <button class="btn btn-warning me-1" [disabled]="!shoppingList.isShopping" (click)="changeIsShoppingState(shoppingList.shoppingListId, false)">Alışverişi tamamla</button>    
+                        <button class="btn btn-danger" (click)="delete(shoppingList.shoppingListId)">Listeyi sil</button>    
+                    </div> 
+                </div>
+                
+                <div class="card-body">
+                    
+                    <table class="table table-striped  text-center">
+                        <thead>
+                          <tr class="table-info">
+                            <th scope="col">Ürün ismi</th>
+                            <th scope="col">Resim</th>
+                            <th scope="col">Alındı</th>
+                            <th scope="col" colspan="2">Aksiyonlar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let sDetail of shoppingList.details" [style]="style(sDetail.isBought)">
+                            <th scope="row">{{sDetail.productName}}</th>
+                            <td >
+                              <img [src]="sDetail.productPictureURL" class="rounded " [alt]="sDetail.productName" height="50" width="50">
+                            </td>
+                            <td>
+                                <input class="form-check-input ms-2" type="checkbox" [disabled]="!shoppingList.isShopping" [checked]="sDetail.isBought" (click)="changeIsBoughtState(sDetail.shoppingListDetailId, sDetail.isBought)" id="flexCheckDefault">
+                            </td>
+                           
+                            <td>
+                              <button
+                                id="btnUpdate"
+                                type="button"
+                                class="btn btn-primary"
+                               
+                                routerLink="/shoppinglistdetail/update/{{sDetail.shoppingListDetailId}}"
+                                [disabled]="shoppingList.isShopping"
+                              >
+                                <i class="bi bi-pencil-fill" ></i>
+                              </button>
+                            </td>
+                            <td>
+                              <button
+                                id="btnDelete"
+                                type="button"
+                                class="btn btn-danger"
+                                (click)="deleteDetail(sDetail.shoppingListDetailId)"
+                                [disabled]="shoppingList.isShopping"
+                              >
+                                <i class="bi bi-trash-fill"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                   
+                </div>
+              </div>
+        </div>
+    </section>
+</main>
+
+

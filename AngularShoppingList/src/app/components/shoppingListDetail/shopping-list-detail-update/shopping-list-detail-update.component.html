@@ -1,0 +1,40 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="shoppingListDetailUpdateForm">
+      <img
+        class="mb-4 mx-auto d-block"
+        src="/assets/techcareer-logo.svg"
+        alt=""
+        width="144"
+        height="100"
+      />
+      <h1 class="h3 mb-3 fw-normal text-center">Açıklamayı güncelle</h1>
+  
+      
+      <div class="form-floating">
+        <input
+          type="textarea"
+          class="form-control"
+          id="floatingDescription"
+          placeholder="Açıklama"
+          [ngModel]="selectedShoppingListDetail.description"
+          formControlName="description"
+        />
+        <label for="floatingEmail">Açıklama</label>
+      </div>
+  
+      <button
+        class="w-100 btn btn-lg btn-primary mt-3"
+        type="submit"
+        (click)="changeDescription()"
+      >
+        Güncelle
+      </button>
+      <button
+        class="w-100 btn btn-lg btn-success mt-2"
+        routerLink="/shoppinglist"
+      >
+        Listelerim
+      </button>
+    </form>
+  </main>
+  

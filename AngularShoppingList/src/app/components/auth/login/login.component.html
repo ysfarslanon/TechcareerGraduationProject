@@ -1,0 +1,48 @@
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="loginForm">
+    <img
+      class="mb-4 mx-auto d-block"
+      src="/assets/techcareer-logo.svg"
+      alt=""
+      width="144"
+      height="100"
+    />
+    <h1 class="h3 mb-3 fw-normal text-center">Giriş Yap</h1>
+
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingEmail"
+        placeholder="name@example.com"
+        formControlName="email"
+      />
+      <label for="floatingEmail">Email</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <label for="floatingPassword">Şifre</label>
+    </div>
+
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      type="submit"
+      (click)="submit()"
+    >
+      Giriş
+    </button>
+    <button
+    class="w-100 btn btn-lg btn-success mt-1"
+    type="submit"
+    routerLink="/register"
+  >
+    Kayıt ol
+  </button>
+  </form>
+</main>

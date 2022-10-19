@@ -1,0 +1,59 @@
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="productAddForm">
+    <img
+      class="mb-4 mx-auto d-block"
+      src="/assets/techcareer-logo.svg"
+      alt=""
+      width="144"
+      height="100"
+    />
+    <h1 class="h3 mb-3 fw-normal text-center">Ürün ekle</h1>
+
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control bottom-rounded-zero"
+        id="floatingCategoryName"
+        placeholder="Ürün ismi"
+        formControlName="name"
+      />
+      <label for="floatingEmail">Ürün ismi</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control rounded-zero"
+        id="floatingCategoryName"
+        placeholder="ResimURL"
+        formControlName="pictureURL"
+      />
+      <label for="floatingEmail">Resim URL</label>
+    </div>
+    <div class="form-floating">
+      <select
+      class="form-control"
+      name="categorySelect"
+      id="categorySelect"
+      formControlName="categoryId"
+      [(ngModel)]="selectedCategoryId"
+    >
+      <option value="0" disabled>Kategori seçiniz</option>
+      <option [ngValue]="c.id" *ngFor="let c of categories">
+        {{ c.name }}
+      </option>
+    </select>
+      <label for="floatingEmail">Resim URL</label>
+    </div>
+
+    <button
+      class="w-100 btn btn-lg btn-primary mt-3"
+      type="submit"
+      (click)="submit()"
+    >
+      Ekle
+    </button>
+    <button class="w-100 btn btn-lg btn-success mt-2" routerLink="/products">
+      Ürün listesi
+    </button>
+  </form>
+</main>

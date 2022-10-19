@@ -1,0 +1,77 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="registerForm">
+      <img
+        class="mb-4 mx-auto d-block"
+        src="/assets/techcareer-logo.svg"
+        alt=""
+        width="144"
+        height="100"
+      />
+      <h1 class="h3 mb-3 fw-normal text-center">Kayıt ol</h1>
+  
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control bottom-rounded-zero"
+          id="floatingFirstName"
+          placeholder="name@example.com"
+          formControlName="firstName"
+        />
+        <label for="floatingFirstName">İsim</label>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control rounded-zero"
+          id="floatinglastName"
+          placeholder="name@example.com"
+          formControlName="lastName"
+        />
+        <label for="floatinglastName">Soyisim</label>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control rounded-zero"
+          id="floatingEmail"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+        <label for="floatingEmail">Email</label>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control rounded-zero"
+          id="floatingPassword"
+          placeholder="name@example.com"
+          formControlName="password"
+        />
+        <label for="floatingPassword">Şifre</label>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control top-rounded-zero"
+          id="floatingPassword"
+          placeholder="name@example.com"
+          formControlName="passwordRepeat"
+        />
+        <label for="floatingPassword">Şifre Tekrar</label>
+      </div>
+     
+  
+      <button
+        class="w-100 btn btn-lg btn-primary mt-3"
+        type="submit"
+        (click)="submit()"
+      >
+        Kayıt Ol
+      </button>
+    </form>
+  </main>
+  
