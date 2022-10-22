@@ -66,6 +66,7 @@ export class ProductAddComponent implements OnInit {
   submit() {
     if (this.productAddForm.valid) {
       let productAddModel = Object.assign({}, this.productAddForm.value);
+      this.productService.add(productAddModel)
     } else {
       this.toastr.warning(environment.formNotValid, "UYARI");
       
