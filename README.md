@@ -5,6 +5,16 @@ Techcareer tarafından verilen proje isterlerinin [ayrıntıları](https://githu
 ## Proje amacı
 Kullanıcıların alışveriş süreçlerini kolaylaştırmak adına almayı planladıkları ürünlerin listelerini ve bu listelerin takibini yapabilmek için oluşturulmuştur.
 
+## Kurulum
+Proje kurulumu Backend ve Frontend olarak ikiye ayırılmıştır. Her iki parçanın da kurulum ayrıntıları kendi klasörlerinde anlatılmıştır.
+1. Projeyi Sağ üstte yeşil renkli butona tıklayıp *Download ZIP* seçeneği ile indiriniz ve klasöre çıkartınız.
+2. Veya boş bir klasör oluşturup terminalde oluşturduğunuz klasöre yerleşin ve aşağıdaki komutu çalıştırın
+```
+git clone https://github.com/ysfarslanon/TechcareerGraduationProject.git
+``` 
+- [Backend kurulumu için](https://github.com/ysfarslanon/TechcareerGraduationProject/tree/main/TechcareerShoppingTracking)
+- [Frontend kurulumu için](https://github.com/ysfarslanon/TechcareerGraduationProject/tree/main/AngularShoppingList)
+
 ## Bilgilendirme
 Bu proje [Backend(.Net 6 (API))](https://github.com/ysfarslanon/TechcareerGraduationProject/tree/main/TechcareerShoppingTracking) ve [Frontend(Angular)](https://github.com/ysfarslanon/TechcareerGraduationProject/tree/main/AngularShoppingList) olarak iki kısımdan oluşmaktadır. İki alanda da kullanılan teknolojiler kendi klasörlerinde belirtilmiştir. Veri tabanı olarak MSSQL kullanılmıştır. Veri tabanı [tasarımı](https://raw.githubusercontent.com/ysfarslanon/TechcareerGraduationProject/main/Images/Db-Diagram.png)
 
